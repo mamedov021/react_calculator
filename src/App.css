@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+ @import url('https://fonts.googleapis.com/css2?family=Lunasima&family=PT+Sans:ital@1&display=swap');
+ *{
+    font-family: 'Roboto', 'sans-serif';
+    font-size:18px; 
+ }
+ body{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 100vh;
+     
+    background-color:rgba(39, 51, 88, 0.948)
+ }
+.container{
+    
+    width: 356px;
+    text-align: center; 
+    border-radius: 5px;
+     
+}
+.header{
+    display: flex;
+    justify-content:space-between;
+    color: #fff;
+}
+.theme{
+    display: flex;
+   
+}
+.theme h4{
+    margin-right: 20px;
+}
+.theme input{
+    width:65px;
+ 
+}
+.theme .num{
+    display: flex;
+    justify-content:space-between;
+ 
+}
+.num p{
+    margin:0 2px 3px 2px;
+}
+form{
+    background-color: rgb(15, 18, 36); 
+    margin-bottom: 15px;
+    border-radius: 10px;
+    
+}
+.keypad{
+    display: grid;
+    grid-template-columns: repeat(4 , 1fr);
+    grid-auto-rows: minmax(60px,auto);
+    background-color: #102734f1;
+    padding: 12px 15px;
+    border-radius:5px
+
+}
+input[type="text"]{
+    height:75px;   
+    width: 326px;
+    background-color: #16161600;
+    border: 0;
+    color: #fff; 
+    text-align: right;
+    font-size:28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    
+}
+ #clear {
+    grid-column: 1/3;
+    color: #fff;
+    background-color:rgb(83, 107, 178);
+    font-weight: 550;
+}
+#backspace {
+   
+    color: #fff;
+    background-color:rgb(83, 107, 178);
+    font-weight: 550;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+#result{
+    grid-column: 3/5;
+    grid-row: 5;
+    color: #fff;
+    background-color: rgb(223, 59, 13); 
+} 
+input:focus,input:active,button:focus,button:active{
+    outline:none;
+} 
+button{
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 20px;
+    border:none;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #34276c;
+    font-weight: 600; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
