@@ -3,14 +3,100 @@
     font-family: 'Roboto', 'sans-serif';
     font-size:18px; 
  }
- body{
+ :root {
+
+    --main-bg:rgb(58, 71, 100);
+    --toggle-bg: hsl(223, 31%, 20%);
+    --screen-bg:hsl(224, 36%, 15%);
+  
+    --key-bg: hsl(225, 21%, 49%);
+    --key-shadow: hsl(224, 28%, 35%);
+    --key-red:hsl(6, 63%, 50%);
+    --key-red-shadow:hsl(6, 70%, 34%);
+  
+    --key-orange:hsl(30, 25%, 89%);
+    --key-orange-shadow: hsl(28, 16%, 65%);
+  
+    --text-blue: hsl(30, 25%, 89%);
+    --text-white: rgb(255, 255, 255);
+    --text-btn: hsl(221, 14%, 31%);
+  
+  }
+  
+  [data-theme='first'] {
+  
+    --main-bg:rgb(58, 71, 100);
+    --toggle-bg: hsl(223, 31%, 20%);
+    --screen-bg:hsl(224, 36%, 15%);
+  
+    --key-bg: hsl(225, 21%, 49%);
+    --key-shadow: hsl(224, 28%, 35%);
+    --key-red:hsl(6, 63%, 50%);
+    --key-red-shadow:hsl(6, 70%, 34%);
+  
+    --key-orange:hsl(30, 25%, 89%);
+    --key-orange-shadow: hsl(28, 16%, 65%);
+  
+    --text-blue: hsl(30, 25%, 89%);
+    --text-white: rgb(255, 255, 255);
+    --text-screen: hsl(30, 25%, 89%);
+    --text-btn: hsl(221, 14%, 31%);
+  }
+  
+  
+  
+  [data-theme='second'] {
+  
+    --main-bg: rgb(230, 230, 230);
+    --toggle-bg:  hsl(0, 5%, 81%);
+    --screen-bg:hsl(0, 0%, 93%);
+  
+    --key-bg: hsl(185, 42%, 37%);
+    --key-shadow: hsl(185, 58%, 25%);
+    --key-red:hsl(25, 98%, 40%);
+    --key-red-shadow:hsl(25, 99%, 27%);
+  
+    --key-orange:hsl(45, 7%, 89%);
+    --key-orange-shadow: hsl(35, 11%, 61%);
+  
+    --text-blue: hsl(60, 10%, 19%);
+    --text-white:  rgb(255, 255, 255);
+    --text-screen: hsl(60, 10%, 19%);
+    --text-btn: hsl(60, 10%, 19%)
+  }
+  
+  
+  [data-theme='third'] {
+    
+    --main-bg:hsl(268, 75%, 9%);
+    --toggle-bg: hsl(268, 71%, 12%);
+    --screen-bg:hsl(268, 71%, 12%);
+  
+    --key-bg: hsl(281, 89%, 26%);
+    --key-shadow: hsl(285, 91%, 52%);
+    --key-red:hsl(176, 100%, 44%);
+    --key-red-shadow:hsl(177, 92%, 70%);
+  
+    --key-orange:hsl(268, 47%, 21%);
+    --key-orange-shadow: hsl(290, 70%, 36%);
+  
+    --text-blue: hsl(52, 100%, 62%);
+    --text-dark-blue: hsl(198, 20%, 13%);
+    --text-white:  rgb(255, 255, 255);
+  
+    --text-screen: hsl(52, 100%, 62%);
+    --text-btn:hsl(52, 100%, 62%);
+  }
+  
+  
+  body,html,.App{
     display: flex;
     justify-content:center;
     align-items: center;
     height: 100vh;
-     
-    background-color:rgba(39, 51, 88, 0.948)
- }
+    width: 100vw;
+    background: var(--main-bg);
+}
 .container{
     
     width: 356px;
@@ -21,8 +107,14 @@
 .header{
     display: flex;
     justify-content:space-between;
-    color: #fff;
+    color: var(--text-blue);
+    padding: 2px;
 }
+.header h3{
+    margin: 15px 5px;
+    font-size:28px;
+}
+
 .theme{
     display: flex;
    
@@ -43,7 +135,7 @@
     margin:0 2px 3px 2px;
 }
 form{
-    background-color: rgb(15, 18, 36); 
+    background-color: var(--screen-bg); 
     margin-bottom: 15px;
     border-radius: 10px;
     
@@ -52,7 +144,7 @@ form{
     display: grid;
     grid-template-columns: repeat(4 , 1fr);
     grid-auto-rows: minmax(60px,auto);
-    background-color: #102734f1;
+    background-color: var(--toggle-bg);
     padding: 12px 15px;
     border-radius:5px
 
@@ -60,9 +152,9 @@ form{
 input[type="text"]{
     height:75px;   
     width: 326px;
-    background-color: #16161600;
+    background-color: var(--screen-bg);
     border: 0;
-    color: #fff; 
+    color: var(--text-blue); 
     text-align: right;
     font-size:28px;
     font-weight: 600;
@@ -71,35 +163,47 @@ input[type="text"]{
 }
  #clear {
     grid-column: 1/3;
-    color: #fff;
-    background-color:rgb(83, 107, 178);
+    color: var(--text-white);
+    background-color:var(--key-bg);
     font-weight: 550;
 }
+
 #backspace {
    
-    color: #fff;
-    background-color:rgb(83, 107, 178);
+    color: var(--text-white);
+    background-color:var(--key-bg);
     font-weight: 550;
+}
+#clear:hover, #backspace:hover{
+    background-color: var(--key-shadow)
 }
 
 
 #result{
     grid-column: 3/5;
     grid-row: 5;
-    color: #fff;
-    background-color: rgb(223, 59, 13); 
+    color: var(--text-white);
+    background-color:var(--key-red); 
 } 
+#result:hover{
+    background-color: var(--key-red-shadow);
+}
 input:focus,input:active,button:focus,button:active{
     outline:none;
 } 
 button{
     margin: 5px;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 20px;
     border:none;
     cursor: pointer;
-    background-color: #ffffff;
+    background-color: #eae3dc;
     color: #34276c;
     font-weight: 600; 
+    border-bottom: 4px solid var(--key-shadow);
 }
 
+input[type="range"] {
+    accent-color: var(--key-red);
+  }
+  
